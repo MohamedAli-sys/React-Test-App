@@ -1,0 +1,14 @@
+@import "../../../Styles/variables.scss";
+
+.header {
+  height: 100vh;
+  nav.nav {
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      color: $white;
+    }
+    .navigation {
+    }
+  }
+}

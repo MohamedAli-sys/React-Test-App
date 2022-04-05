@@ -1,0 +1,44 @@
+@import '../../Styles/variables.scss';
+nav.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    background-color: $primary;
+    padding: 0 40px;
+    .logo {
+        color: $white;
+    }
+    .navigation {
+        ul {
+            display: flex;
+            margin: 0;
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    padding: 20px;
+                    font-weight: bold;
+                    transition: color $transition;
+                }
+                &:hover {
+                    a {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+    .right-side-buttons {
+        button {
+            background-color: transparent;
+            border-radius: 50%;
+            padding: 14px;
+            font-size: 20px;
+            border: 0px;
+            cursor: pointer;
+            color: $white;
+        }
+    }
+}
