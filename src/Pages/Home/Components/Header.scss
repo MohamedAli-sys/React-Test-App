@@ -1,5 +1,90 @@
 @import '../../../Styles/variables.scss';
 
-.header {
+header.header {
     height: calc(100vh - 15vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 120px;
+    .left-section {
+        flex: 1;
+        img {
+            width: 100%;
+            height: 90%;
+        }
+    }
+    .right-section {
+        flex: 1;
+        h1 {
+            font-size: 80px;
+            color: $white;
+            line-height: 0.8;
+        }
+        p {
+            font-size: 18px;
+            color: $white;
+            font-weight: bold;
+            line-height: 26px;
+            padding: 40px 0;
+        }
+        .buttons {
+            button {
+                position: relative;
+                padding: 20px 38px;
+                margin: 10px;
+                border: none;
+                border-radius: 10px;
+                font-weight: bold;
+                transition: all 1s;
+                cursor: pointer;
+                &:last-of-type {
+                    background-color: $secondary-dark;
+                    color: $white;
+                }
+                span {
+                    transition: all 1s;
+                }
+                svg {
+                    margin: 0 10px;
+                }
+                &:hover {
+                    span {
+                        position: relative;
+                        animation: buttonNameSpan 0.5s forwards;
+                    }
+                    svg {
+                        position: relative;
+                        animation: arrowMoving 0.5s forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes arrowMoving {
+    0% {
+        left: 0;
+    }
+    40% {
+        opacity: 0;
+        left: 20px;
+    }
+    75% {
+        opacity: 0.5;
+        left: -100px;
+    }
+    100% {
+        opacity: 1;
+        left: -80px;
+    }
+}
+
+@keyframes buttonNameSpan {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: 20px;
+    }
 }
