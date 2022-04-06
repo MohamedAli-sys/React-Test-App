@@ -6,9 +6,15 @@ nav.nav {
     height: 15vh;
     background-color: $primary;
     padding: 0 40px;
+    @media (max-width: 1024px) {
+        background-color: $white;
+    }
     .logo {
         width: 20%;
         color: $white;
+        @media (max-width: 1024px) {
+            color: $secondary-dark;
+        }
     }
     .navigation {
         ul {
@@ -51,19 +57,20 @@ nav.nav {
                 }
             }
             @media (max-width: 1024px) {
-                display: none;
-                &.expanded {
-                    display: flex;
-                    animation: expand 0.5s forwards;
-                }
                 flex-direction: column;
                 position: absolute;
-                top: 80px;
+                top: 75px;
                 left: 0;
-                background-color: $white;
+                padding: 0 20px;
                 width: 100%;
-                text-align: center;
+                background-color: $white;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path $transition ease-out;
+                &.toggled {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
                 li {
+                    border-bottom: 1px solid #eee;
                     a {
                         color: $secondary;
                         padding: 20px;
@@ -117,10 +124,9 @@ nav.nav {
         padding: 14px;
         font-size: 20px;
         cursor: pointer;
-        color: $white;
         margin: 7px;
-        background-color: $white;
-        color: black;
+        background-color: $secondary-dark;
+        color: $white;
         border: 0;
         @media (min-width: 1026px) {
             display: none;
@@ -136,16 +142,5 @@ nav.nav {
     100% {
         color: $secondary;
         left: 0;
-    }
-}
-
-@keyframes expand {
-    0% {
-        opacity: 0;
-        height: 0;
-    }
-    100% {
-        opacity: 1;
-        height: 100%;
     }
 }

@@ -1,6 +1,6 @@
-import { faCartShopping, faBagShopping, faBars, faMagnifyingGlass, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faBars, faMagnifyingGlass, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 import { NavLink } from "react-router-dom";
 import routes from "../routes";
 import './Navbar.scss'
@@ -9,10 +9,9 @@ interface NavbarProps { }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
 
-    const [expand, setExpand] = useState<boolean>(false)
-
     const toggleMenu = () => {
-        setExpand(!expand)
+        const el = document.querySelector('.expanded')
+        el?.classList.toggle('toggled')
     }
 
     return (
@@ -22,11 +21,11 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                     <h1>Logo</h1>
                 </div>
                 <div className="navigation">
-                    <ul className={expand ? "expanded" : ''}>
+                    <ul className="expanded">
                         {
                             routes.map((link, idx) => {
                                 return (
-                                    <li key={idx}>
+                                    <li key={idx} onClick={() => toggleMenu()}>
                                         <NavLink
                                             key={idx}
                                             to={link.path}

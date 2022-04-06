@@ -2,13 +2,4 @@
 
 .header {
     height: calc(100vh - 15vh);
-    nav.nav {
-        display: flex;
-        justify-content: space-between;
-        .logo {
-            color: $white;
-        }
-        .navigation {
-        }
-    }
 }
