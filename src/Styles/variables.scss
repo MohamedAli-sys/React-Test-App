@@ -12,6 +12,12 @@
     --white-color: #fff;
 }
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 $primary: var(--primary-color);
 $secondary: var(--secondary-color);
 $white: var(--white-color);

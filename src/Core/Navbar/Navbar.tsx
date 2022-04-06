@@ -1,14 +1,20 @@
-import { faCartShopping, faBagShopping, faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faBagShopping, faBars, faMagnifyingGlass, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
+import { FunctionComponent, useState } from "react";
+import { NavLink } from "react-router-dom";
+import routes from "../routes";
 import './Navbar.scss'
 
-interface NavbarProps {
-
-}
+interface NavbarProps { }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
+
+    const [expand, setExpand] = useState<boolean>(false)
+
+    const toggleMenu = () => {
+        setExpand(!expand)
+    }
+
     return (
         <>
             <nav className="nav">
@@ -16,9 +22,22 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                     <h1>Logo</h1>
                 </div>
                 <div className="navigation">
-                    <ul>
-                        <li><Link to={'/'} >Home</Link></li>
-                        <li><Link to={'/about'} >About</Link></li>
+                    <ul className={expand ? "expanded" : ''}>
+                        {
+                            routes.map((link, idx) => {
+                                return (
+                                    <li key={idx}>
+                                        <NavLink
+                                            key={idx}
+                                            to={link.path}
+                                            className={active => active.isActive ? 'isActive' : ''} >
+                                            <FontAwesomeIcon icon={faArrowRightLong} />
+                                            <span>{link.name}</span>
+                                        </NavLink>
+                                    </li>
+                                )
+                            })
+                        }
                     </ul>
                 </div>
                 <div className="right-side-buttons">
@@ -26,6 +45,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                     <button> <FontAwesomeIcon icon={faCartShopping} /></button>
                     <button> <FontAwesomeIcon icon={faBars} /></button>
                 </div>
+                <button className="expanded-button" onClick={() => toggleMenu()}> <FontAwesomeIcon icon={faBars} /></button>
             </nav>
         </>
     );
