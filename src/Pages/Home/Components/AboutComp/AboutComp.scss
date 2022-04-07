@@ -1,0 +1,66 @@
+@import '../../../../Styles/variables.scss';
+
+section.about-comp {
+    background-color: hsl(240deg 4% 19%);
+    padding-top: 130px;
+    padding-bottom: 73px;
+    .cards {
+        display: flex;
+        justify-content: center;
+        .card {
+            width: 20%;
+            margin: 0 60px;
+            .content {
+                text-decoration: none;
+                position: relative;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                vertical-align: middle;
+                img {
+                    width: 70%;
+                    z-index: 2;
+                    &:last-of-type {
+                        position: absolute;
+                        z-index: 1;
+                    }
+                }
+            }
+            .card-body {
+                padding: 27px 0;
+                text-align: center;
+                line-height: 2;
+                .card-header {
+                    color: $white;
+                    text-decoration: none;
+                    h5 {
+                        transition: color $transition;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 27px;
+                        &:hover {
+                            color: $primary;
+                        }
+                        &::after {
+                            content: '';
+                            width: 22%;
+                            height: 2px;
+                            position: absolute;
+                            bottom: 0;
+                            margin: 3px auto;
+                            background-color: $primary;
+                        }
+                    }
+                }
+                p {
+                    color: #b8bbcc;
+                    font-size: 15px;
+                    margin: 8px 0 0;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+}

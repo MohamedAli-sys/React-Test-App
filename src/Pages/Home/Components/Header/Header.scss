@@ -1,16 +1,16 @@
-@import '../../../Styles/variables.scss';
+@import '../../../../Styles/variables.scss';
 
 header.header {
     height: calc(100vh - 15vh);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 120px;
+    padding: 0 160px;
+    background-color: $primary;
     .left-section {
         flex: 1;
         img {
-            width: 100%;
-            height: 90%;
+            width: 90%;
         }
     }
     .right-section {
@@ -54,7 +54,7 @@ header.header {
                     }
                     svg {
                         position: relative;
-                        animation: arrowMoving 0.5s forwards;
+                        animation: arrowButtonMoving 0.5s forwards;
                     }
                 }
             }
@@ -62,7 +62,7 @@ header.header {
     }
 }
 
-@keyframes arrowMoving {
+@keyframes arrowButtonMoving {
     0% {
         left: 0;
     }

@@ -1,7 +1,7 @@
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
-import image from './../../../assests/images/HeaderSection.png'
+import image from './../../../../assests/images/HeaderSection.png'
 import './Header.scss'
 
 interface HeaderProps {
