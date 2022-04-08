@@ -8,6 +8,15 @@ section.about-comp {
         display: flex;
         justify-content: center;
         .card {
+            &:hover {
+                .content {
+                    img {
+                        &:first-of-type {
+                            transform: translateY(-10%);
+                        }
+                    }
+                }
+            }
             width: 20%;
             margin: 0 60px;
             .content {
@@ -20,6 +29,7 @@ section.about-comp {
                 img {
                     width: 70%;
                     z-index: 2;
+                    transition: transform 1s;
                     &:last-of-type {
                         position: absolute;
                         z-index: 1;
@@ -40,6 +50,7 @@ section.about-comp {
                         align-items: center;
                         justify-content: center;
                         font-size: 27px;
+                        letter-spacing: -2px;
                         &:hover {
                             color: $primary;
                         }
