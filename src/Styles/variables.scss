@@ -11,6 +11,11 @@
 
     --secondary-color-dark: hsl(var(--secondary-hue), calc(var(--secondary-saturation) + 20%), calc(var(--secondary-light) - 17%));
 
+    --gray-hue: 231;
+    --gray-saturation: 11%;
+    --gray-light: 45%;
+    --gray-color: hsl(var(--gray-hue), var(--gray-saturation), var(--gray-light));
+
     --white-color: #fff;
 }
 
@@ -23,6 +28,7 @@
 $primary: var(--primary-color);
 $secondary: var(--secondary-color);
 $secondary-dark: var(--secondary-color-dark);
+$gray: var(--gray-color);
 $white: var(--white-color);
 
 $transition: 0.5s;

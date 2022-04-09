@@ -1,12 +1,16 @@
 @import '../../../../Styles/variables.scss';
 
 header.header {
-    height: calc(100vh - 15vh);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 160px;
     background-color: $primary;
+    @media (max-width: 991px) {
+        padding: 10px 100px;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
     .left-section {
         flex: 1;
         img {

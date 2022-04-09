@@ -1,0 +1,23 @@
+@import '../../Styles/variables.scss';
+
+.sectionHeading {
+    padding-top: 110px;
+    padding-bottom: 45px;
+    margin: 0 auto;
+    text-align: center;
+    width: 66%;
+    .sectionName {
+        color: $secondary-dark;
+        font-size: 60px;
+        .sectionSpan {
+            color: $primary;
+        }
+    }
+    .headingParag {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 15px 0 0;
+        line-height: 26px;
+        color: $gray;
+    }
+}
