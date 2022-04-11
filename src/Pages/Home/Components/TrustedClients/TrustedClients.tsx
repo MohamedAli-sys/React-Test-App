@@ -40,8 +40,8 @@ const TrustedClients: FunctionComponent<TrustedClientsProps> = () => {
                             slide.map((img, idx) => {
                                 return (
                                     <div className="item" key={idx}>
-                                        <img src={img.img2} />
                                         <img src={img.img1} />
+                                        <img src={img.img2} />
                                     </div>
                                 )
                             })

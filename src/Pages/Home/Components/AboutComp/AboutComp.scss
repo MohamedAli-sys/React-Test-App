@@ -21,7 +21,7 @@ section.about-comp {
                 .content {
                     img {
                         &:first-of-type {
-                            transform: translateY(-10%);
+                            animation: $animationUp;
                         }
                     }
                 }
@@ -37,6 +37,9 @@ section.about-comp {
                     width: 70%;
                     z-index: 2;
                     transition: transform 1s;
+                    &:first-of-type {
+                        animation: $animationDown;
+                    }
                     &:last-of-type {
                         position: absolute;
                         z-index: 1;

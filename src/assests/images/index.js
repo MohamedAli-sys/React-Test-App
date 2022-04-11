@@ -8,6 +8,13 @@ import portImg7 from './h2-port-img-7-1300x644.jpg';
 import portImg8 from './h2-port-img-8.jpg';
 import portImg9 from './h2-port-img-9.jpg';
 
+import aboutIcon1 from './about-us-icon-with-text-img-1.png';
+import aboutIcon2 from './about-us-icon-with-text-img-2.png';
+import aboutIcon3 from './about-us-icon-with-text-img-3.png';
+import aboutIcon4 from './about-us-icon-with-text-img-4.png';
+import aboutIcon5 from './about-us-icon-with-text-img-5.png';
+import aboutIcon6 from './about-us-icon-with-text-img-6.png';
+
 export const images = {
     portImg1,
     portImg2,
@@ -18,4 +25,10 @@ export const images = {
     portImg7,
     portImg8,
     portImg9,
+    aboutIcon1,
+    aboutIcon2,
+    aboutIcon3,
+    aboutIcon4,
+    aboutIcon5,
+    aboutIcon6
 }
