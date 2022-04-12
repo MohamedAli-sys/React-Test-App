@@ -1,0 +1,87 @@
+@import '../../../../Styles/variables.scss';
+
+.blog-container {
+    padding: 100px 130px;
+    width: 100%;
+    .blog-container-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+        gap: 40px;
+        .card {
+            &:hover {
+                .card-body {
+                    .card-heading {
+                        a {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+            .card-img {
+                img {
+                    width: 100%;
+                    cursor: pointer;
+                }
+            }
+            .card-body {
+                .date {
+                    margin: 25px 0 15px;
+                    font-size: 14px;
+                    width: fit-content;
+                    cursor: pointer;
+                    svg {
+                        margin-right: 10px;
+                        font-size: 20px;
+                    }
+                    span {
+                        transition: color $transition;
+                        font-weight: 600;
+                    }
+                    &:hover {
+                        span {
+                            color: $primary;
+                        }
+                    }
+                }
+                .card-heading {
+                    font-size: 27px;
+                    font-weight: 600;
+                    line-height: 1;
+                    a {
+                        text-decoration: none;
+                        transition: color $transition;
+                        color: black;
+                    }
+                }
+                .button {
+                    width: fit-content;
+                    a {
+                        font-size: 14px;
+                        font-weight: 600;
+                        border: none;
+                        padding: 10px 0;
+                        color: $gray;
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        svg {
+                            padding: 12px;
+                            margin-left: 15px;
+                            border: 2px solid $gray;
+                            border-radius: 50%;
+                            transform: rotate(0);
+                            width: 20px;
+                            height: 20px;
+                            transition: all $transition;
+                        }
+                    }
+                    &:hover {
+                        svg {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

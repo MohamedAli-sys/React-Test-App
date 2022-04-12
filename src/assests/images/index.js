@@ -14,7 +14,9 @@ import aboutIcon3 from './about-us-icon-with-text-img-3.png';
 import aboutIcon4 from './about-us-icon-with-text-img-4.png';
 import aboutIcon5 from './about-us-icon-with-text-img-5.png';
 import aboutIcon6 from './about-us-icon-with-text-img-6.png';
-
+import blog1 from './blog-post-img-6-650x650.jpg';
+import blog2 from './blog-post-img-7-650x650.jpg';
+import blog3 from './blog-post-img-8-650x650.jpg';
 export const images = {
     portImg1,
     portImg2,
@@ -30,5 +32,8 @@ export const images = {
     aboutIcon3,
     aboutIcon4,
     aboutIcon5,
-    aboutIcon6
+    aboutIcon6,
+    blog1,
+    blog2,
+    blog3
 }

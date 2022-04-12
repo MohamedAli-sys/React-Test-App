@@ -2,6 +2,7 @@ import React from 'react'
 import AboutComp from './Components/AboutComp/AboutComp';
 import AboutUsSection from './Components/AboutUsSection/AboutUsSection';
 import AnimateTrain from './Components/AnimateTrain/AnimateTrain';
+import Blog from './Components/Blog/Blog';
 import Header from './Components/Header/Header';
 import Portfolio from './Components/Portfolio/Portfolio';
 import ProfTeam from './Components/ProfTeam/ProfTeam';
@@ -19,6 +20,7 @@ const Home: React.FunctionComponent<Home> = props => {
             {/* <AnimateTrain /> */}
             <AboutUsSection />
             <ProfTeam />
+            <Blog />
         </main>
     );
 }
