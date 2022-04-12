@@ -1,0 +1,182 @@
+@import '../../../../Styles/variables.scss';
+
+.contact-container {
+    padding-bottom: 100px;
+    width: 100%;
+    background-color: $primary;
+    .sectionHeading {
+        padding: 110px 10% 45px;
+        .sectionName,
+        .headingParag {
+            color: $white;
+        }
+    }
+    .contact-container-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
+        .addresses {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            @media (max-width: 480px) {
+                flex-direction: column;
+            }
+            .new-york {
+                margin: 0 25px;
+                h6 {
+                    font-size: 27px;
+                    color: $white;
+                    margin: 10px 0 20px;
+                }
+                .icons {
+                    display: flex;
+                    color: $white;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        background-color: transparent;
+                        border: 2px solid #e04332;
+                        border-radius: 50%;
+                        padding: 15px;
+                        margin-right: 20px;
+                        transition: color $transition, background-color $transition;
+                        cursor: pointer;
+                        &:hover {
+                            color: $primary;
+                            background-color: $white;
+                            border-color: $primary;
+                        }
+                    }
+                }
+                .contact-list {
+                    ul {
+                        li {
+                            list-style: none;
+                            padding: 10px 0;
+                            color: $white;
+                            a {
+                                color: $white;
+                                text-decoration: none;
+                            }
+                            span {
+                                margin-left: 15px;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .form {
+            flex: 1;
+            form {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                margin: 20px;
+                @media (max-width: 991px) {
+                    display: block;
+                    width: 100%;
+                    padding: 0 35px;
+                    margin: 20px 0;
+                }
+                input {
+                    position: relative;
+                    width: 100%;
+                    margin: 0 0 30px;
+                    padding: 13px 0 0;
+                    font-family: inherit;
+                    font-size: 15px;
+                    font-weight: inherit;
+                    line-height: calc(58px - (13px * 2) - 2px);
+                    color: #08104d;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid;
+                    border-radius: 0;
+                    outline: 0;
+                    cursor: text;
+                    -webkit-appearance: none;
+                    box-sizing: border-box;
+                    -webkit-transition: border-color 0.2s ease-in-out;
+                    -moz-transition: border-color 0.2s ease-in-out;
+                    transition: border-color 0.2s ease-in-out;
+                    color: #fa9589;
+                    border-color: rgba(250, 116, 101, 1);
+                    &::placeholder {
+                        color: rgba(250, 116, 101, 1);
+                    }
+                    &:focus {
+                        &::placeholder {
+                            color: $white;
+                        }
+                        color: $white;
+                        border-color: rgba(255, 255, 255, 1);
+                    }
+                }
+                button {
+                    position: relative;
+                    margin: 0;
+                    font-family: inherit;
+                    font-size: 14px;
+                    line-height: 1em;
+                    letter-spacing: 0.03em;
+                    font-weight: 600;
+                    outline: 0;
+                    transition: color $transition ease-in-out, background-color $transition ease-in-out, border-color $transition ease-in-out;
+                    border-radius: 10px;
+                    border: 0;
+                    padding: 20px 38px;
+                    cursor: pointer;
+                    width: 50%;
+                    &:hover {
+                        span {
+                            padding-left: 30px;
+                            padding-right: 0;
+                            &::before {
+                                opacity: 1;
+                                transform: translateX(25px);
+                                transition: transform $transition 0.3s ease-in-out, opacity $transition 0.3s ease-in-out;
+                            }
+                            &::after {
+                                opacity: 0;
+                                transform: translateX(-17px);
+                                transition: transform $transition ease-in-out, opacity $transition ease-in-out;
+                            }
+                        }
+                    }
+                    span {
+                        display: block;
+                        padding-right: 30px;
+                        transition: padding $transition 80ms ease-in-out;
+                        position: relative;
+                        &::before,
+                        &::after {
+                            content: '';
+                            top: calc(50% - 4px);
+                            width: 26px;
+                            height: 9px;
+                            background-image: url(../../../../assests/images/arrow-default.svg);
+                            position: absolute;
+                            transition: transform 0.5s 0.3s, opacity 0.5s 0.3s;
+                        }
+                        &::before {
+                            left: 0;
+                            opacity: 0;
+                            transform: translateX(0);
+                        }
+                        &::after {
+                            right: 0;
+                            opacity: 1;
+                            transform: translateX(-33px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

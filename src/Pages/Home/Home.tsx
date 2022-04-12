@@ -3,6 +3,7 @@ import AboutComp from './Components/AboutComp/AboutComp';
 import AboutUsSection from './Components/AboutUsSection/AboutUsSection';
 import AnimateTrain from './Components/AnimateTrain/AnimateTrain';
 import Blog from './Components/Blog/Blog';
+import Contact from './Components/Contact/Contact';
 import Header from './Components/Header/Header';
 import Portfolio from './Components/Portfolio/Portfolio';
 import ProfTeam from './Components/ProfTeam/ProfTeam';
@@ -21,6 +22,7 @@ const Home: React.FunctionComponent<Home> = props => {
             <AboutUsSection />
             <ProfTeam />
             <Blog />
+            <Contact />
         </main>
     );
 }
