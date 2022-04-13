@@ -3,6 +3,9 @@
 .blog-container {
     padding: 100px 130px;
     width: 100%;
+    @media (max-width: 480px) {
+        padding: 100px 30px;
+    }
     .blog-container-content {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));

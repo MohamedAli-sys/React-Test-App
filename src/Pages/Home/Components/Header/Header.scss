@@ -23,6 +23,9 @@ header.header {
             font-size: 80px;
             color: $white;
             line-height: 0.8;
+            @media (max-width: 480px) {
+                margin-bottom: 20px;
+            }
         }
         p {
             font-size: 18px;
@@ -30,6 +33,9 @@ header.header {
             font-weight: bold;
             line-height: 26px;
             padding: 40px 0;
+            @media (max-width: 480px) {
+                display: none;
+            }
         }
         .buttons {
             button {

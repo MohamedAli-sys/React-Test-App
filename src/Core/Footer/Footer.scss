@@ -1,0 +1,189 @@
+@import '../../Styles/variables.scss';
+
+footer.footer {
+    padding: 100px 0;
+    background-color: #040826;
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 40px;
+        padding: 0 30px;
+        h6,
+        p,
+        a,
+        li {
+            color: $white;
+        }
+        h6 {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+        ul {
+            list-style: none;
+            li::before {
+                content: '\25A0';
+                font-weight: bold;
+                display: inline-block;
+                font-size: 12px;
+                width: 12px;
+                padding: 0 20px 0 0;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+
+        .contact-info {
+            padding: 0 20px;
+            p {
+                margin-bottom: 30px;
+                padding-top: 10px;
+                font-weight: 500px;
+                color: $footerColor;
+                line-height: 1.7em;
+            }
+            .address,
+            .email,
+            .phone {
+                margin: 20px 0;
+                line-height: 0.7em;
+
+                &:hover {
+                    a,
+                    svg {
+                        color: $primary;
+                    }
+                }
+                svg {
+                    transition: color $transition;
+                    color: $white;
+                    margin-right: 16px;
+                }
+                a {
+                    transition: color $transition;
+                    color: $footerColor;
+                }
+            }
+        }
+        .latest-tweets {
+            padding: 0 20px;
+            .tweets {
+                padding-top: 10px;
+                .tweet {
+                    display: flex;
+                    margin-bottom: 30px;
+                    .tweet-content {
+                        a {
+                            color: #3e49f3;
+                        }
+                    }
+                    svg,
+                    p {
+                        color: $footerColor;
+                        line-height: 1em;
+                        word-wrap: break-word;
+                    }
+                    svg {
+                        padding-right: 20px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .our-blog {
+            padding: 0 20px;
+            .list {
+                padding-top: 10px;
+                li {
+                    margin-bottom: 20px;
+                    a {
+                        display: inline-block;
+                        &:first-of-type {
+                            transition: color $transition;
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                        &:last-of-type {
+                            color: #737580;
+                            font-size: 13px;
+                            padding-left: 31px;
+                        }
+                    }
+                }
+            }
+        }
+        .locations {
+            img {
+                padding-top: 25px;
+            }
+        }
+    }
+}
+
+.copyright {
+    width: 100%;
+    padding: 40px 50px;
+    background-color: #03051a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 780px) {
+        flex-direction: column;
+    }
+    .logo {
+        width: 33%;
+        @media (max-width: 780px) {
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            font-size: 40px;
+            color: $white;
+        }
+    }
+    .reserve {
+        width: 33%;
+        text-align: center;
+        color: #666a80;
+        font-size: 12px;
+        @media (max-width: 780px) {
+            width: 100%;
+            margin: 20px 0;
+        }
+    }
+    .icons {
+        width: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @media (max-width: 780px) {
+            width: 100%;
+            justify-content: center;
+        }
+        span {
+            color: $white;
+            font-size: 14px;
+            margin-right: 20px;
+        }
+        .icon {
+            display: flex;
+            color: $white;
+            svg {
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border: 1px solid #151b49;
+                border-radius: 50%;
+                padding: 15px;
+                margin-right: 20px;
+                transition: color $transition, background-color $transition;
+                cursor: pointer;
+                &:hover {
+                    background-color: #151b49;
+                }
+            }
+        }
+    }
+}

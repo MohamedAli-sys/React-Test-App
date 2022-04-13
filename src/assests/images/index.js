@@ -17,6 +17,7 @@ import aboutIcon6 from './about-us-icon-with-text-img-6.png';
 import blog1 from './blog-post-img-6-650x650.jpg';
 import blog2 from './blog-post-img-7-650x650.jpg';
 import blog3 from './blog-post-img-8-650x650.jpg';
+import footerMap from './footer-map-img-300x171.png';
 export const images = {
     portImg1,
     portImg2,
@@ -35,5 +36,6 @@ export const images = {
     aboutIcon6,
     blog1,
     blog2,
-    blog3
+    blog3,
+    footerMap
 }

@@ -6,6 +6,7 @@ nav.nav {
     height: 15vh;
     background-color: $primary;
     padding: 0 40px;
+    z-index: 9999;
     @media (max-width: 1024px) {
         background-color: $white;
     }
@@ -20,6 +21,7 @@ nav.nav {
         ul {
             display: flex;
             margin: 0;
+            z-index: 9;
             li {
                 list-style: none;
                 a {

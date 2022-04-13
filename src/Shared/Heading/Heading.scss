@@ -6,9 +6,16 @@
     margin: 0 auto;
     text-align: center;
     width: 66%;
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 30px;
+    }
     .sectionName {
         color: $secondary-dark;
         font-size: 60px;
+        @media (max-width: 768px) {
+            font-size: 45px;
+        }
         .sectionSpan {
             color: $primary;
         }
