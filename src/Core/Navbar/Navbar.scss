@@ -4,9 +4,11 @@ nav.nav {
     justify-content: space-between;
     align-items: center;
     height: 15vh;
-    background-color: $primary;
+    background-color: rgba(255, 255, 255, 0);
     padding: 0 40px;
     z-index: 9999;
+    position: absolute;
+    width: 100%;
     @media (max-width: 1024px) {
         background-color: $white;
     }
@@ -91,6 +93,7 @@ nav.nav {
         }
     }
     .right-side-buttons {
+        display: flex;
         button {
             height: 60px;
             width: 60px;
@@ -133,6 +136,68 @@ nav.nav {
             display: none;
         }
     }
+}
+
+nav.sticky__nav {
+    position: fixed;
+    top: 0;
+    height: 11vh;
+    background-color: $white;
+    box-shadow: 0 0 8px 0px black;
+    transition: 0.2s ease-in-out;
+    transform: translateY(-100px);
+    .logo {
+        color: $secondary-dark;
+    }
+    .navigation {
+        ul {
+            @media (max-width: 1024px) {
+                top: 62px;
+            }
+            li {
+                a {
+                    color: $secondary-dark;
+                    &.isActive {
+                        color: $primary;
+                        svg {
+                            display: flex;
+                            color: $primary;
+                        }
+                    }
+                }
+                &:hover {
+                    a {
+                        color: $primary;
+                        svg {
+                            display: flex;
+                            animation: arrowMoving 0.5s forwards;
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right-side-buttons {
+        button {
+            color: $secondary-dark;
+            border: 2px solid #d7e3f7;
+            &:hover {
+                border-color: $secondary;
+            }
+            &:nth-of-type(2) {
+                display: none;
+            }
+            &:last-of-type {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+nav.appear-nav {
+    transform: translateY(0px);
 }
 
 @keyframes arrowMoving {
