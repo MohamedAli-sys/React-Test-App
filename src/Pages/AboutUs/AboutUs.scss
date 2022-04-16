@@ -1,0 +1,121 @@
+@import '../../Styles/variables.scss';
+
+nav.nav {
+    background-color: $white;
+    .logo {
+        color: $secondary-dark;
+    }
+    .navigation {
+        ul {
+            li {
+                a {
+                    color: $secondary-dark;
+                    &.isActive {
+                        color: $primary;
+                        svg {
+                            color: $primary;
+                        }
+                    }
+                }
+                &:hover {
+                    a {
+                        color: $primary;
+                        svg {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right-side-buttons {
+        button {
+            color: $secondary-dark;
+            border: 2px solid #d7e3f7;
+            &:hover {
+                border-color: $secondary;
+            }
+            &:last-of-type {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+.about-us-container {
+    padding: 100px 30px;
+    margin: 0 30px;
+    .head-image {
+        padding: 0 270px 0;
+        img {
+            width: 100%;
+        }
+    }
+    .offer-section {
+        background-color: #f2f7ff;
+        .shape {
+            -webkit-transform: scaleY(-1) translateY(99%);
+            -moz-transform: scaleY(-1) translateY(99%);
+            transform: scaleY(-1) translateY(99%);
+            svg {
+                g {
+                    fill: #f2f7ff;
+                }
+            }
+        }
+        .offers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .section-heading {
+                width: 50%;
+                text-align: center;
+                h1 {
+                    font-size: 60px;
+                    span {
+                        color: $primary;
+                    }
+                }
+                p {
+                    font-size: 18px;
+                    color: #eee;
+                    margin: 15px 0 0;
+                }
+            }
+        }
+        .offers-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            padding: 100px 0 180px;
+            .card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .card-img {
+                    img {
+                        width: 100%;
+                    }
+                }
+                .card-body {
+                    padding: 27px 35px 0;
+                    text-align: center;
+                    h5 {
+                        font-size: 27px;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            height: 2px;
+                            width: 30%;
+                            left: 0;
+                            bottom: -10px;
+                            transform: translateX(100%);
+                            background: #3e49f3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
