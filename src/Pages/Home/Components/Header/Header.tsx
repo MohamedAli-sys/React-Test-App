@@ -19,14 +19,12 @@ const Header: FunctionComponent<HeaderProps> = () => {
                     <h1>Get creative with .....</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae cumque optio recusandae</p>
                     <div className="buttons">
-                        <button>
+                        <a className="button__arrows">
                             <span>Read More</span>
-                            <FontAwesomeIcon icon={faArrowRightLong} />
-                        </button>
-                        <button>
+                        </a>
+                        <a className="button__arrows">
                             <span>Get Innovie</span>
-                            <FontAwesomeIcon icon={faArrowRightLong} />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </header>

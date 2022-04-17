@@ -35,28 +35,19 @@ nav.nav {
                     transition: color $transition;
                     display: flex;
                     align-items: center;
-                    svg {
-                        display: none;
-                        color: $white;
-                        transition: color $transition;
-                        position: absolute;
-                        left: 0;
-                    }
                     &.isActive {
                         color: $secondary;
                         svg {
                             display: flex;
-                            color: $secondary;
+                            fill: $primary;
+                            opacity: 1;
+                            transform: translateX(-10px);
                         }
                     }
                 }
                 &:hover {
                     a {
                         color: $secondary;
-                        svg {
-                            display: flex;
-                            animation: arrowMoving 0.5s forwards;
-                        }
                     }
                 }
             }

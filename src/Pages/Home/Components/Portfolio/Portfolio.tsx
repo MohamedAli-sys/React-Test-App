@@ -4,6 +4,7 @@ import { images } from '../../../../assests/images';
 import './Portfolio.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import SvgArrow from '../../../../Shared/Components/SvgArrow';
 interface PortfolioProps {
 }
 
@@ -97,23 +98,23 @@ const Portfolio: FunctionComponent<PortfolioProps> = () => {
             <Heading sectionName={'Awesome'} sectionSpan={'portfolio'} headingParag={headingParag} />
             <div className='links'>
                 <ul>
-                    <li>
+                    <li className='link__arrows'>
                         <a className='showAll isActive'>
-                            <FontAwesomeIcon icon={faArrowRightLong} />
+                            <SvgArrow />
                             <span>Show All</span>
                         </a>
                     </li>
-                    <li>
+                    <li className='link__arrows'>
                         <a className='illustration'>
-                            <FontAwesomeIcon icon={faArrowRightLong} />
+                            <SvgArrow />
                             <span>
                                 Illustration
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li className='link__arrows'>
                         <a className='New'>
-                            <FontAwesomeIcon icon={faArrowRightLong} />
+                            <SvgArrow />
                             <span>
                                 New
                             </span>

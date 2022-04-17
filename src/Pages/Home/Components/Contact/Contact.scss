@@ -118,63 +118,8 @@
                         border-color: rgba(255, 255, 255, 1);
                     }
                 }
-                button {
-                    position: relative;
-                    margin: 0;
-                    font-family: inherit;
-                    font-size: 14px;
-                    line-height: 1em;
-                    letter-spacing: 0.03em;
-                    font-weight: 600;
-                    outline: 0;
-                    transition: color $transition ease-in-out, background-color $transition ease-in-out, border-color $transition ease-in-out;
-                    border-radius: 10px;
-                    border: 0;
-                    padding: 20px 38px;
-                    cursor: pointer;
-                    width: 50%;
-                    &:hover {
-                        span {
-                            padding-left: 30px;
-                            padding-right: 0;
-                            &::before {
-                                opacity: 1;
-                                transform: translateX(25px);
-                                transition: transform $transition 0.3s ease-in-out, opacity $transition 0.3s ease-in-out;
-                            }
-                            &::after {
-                                opacity: 0;
-                                transform: translateX(-17px);
-                                transition: transform $transition ease-in-out, opacity $transition ease-in-out;
-                            }
-                        }
-                    }
-                    span {
-                        display: block;
-                        padding-right: 30px;
-                        transition: padding $transition 80ms ease-in-out;
-                        position: relative;
-                        &::before,
-                        &::after {
-                            content: '';
-                            top: calc(50% - 4px);
-                            width: 26px;
-                            height: 9px;
-                            background-image: url(../../../../assests/images/arrow-default.svg);
-                            position: absolute;
-                            transition: transform 0.5s 0.3s, opacity 0.5s 0.3s;
-                        }
-                        &::before {
-                            left: 0;
-                            opacity: 0;
-                            transform: translateX(0);
-                        }
-                        &::after {
-                            right: 0;
-                            opacity: 1;
-                            transform: translateX(-33px);
-                        }
-                    }
+                a.button__arrows {
+                    width: fit-content;
                 }
             }
         }

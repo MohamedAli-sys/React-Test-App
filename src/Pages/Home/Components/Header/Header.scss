@@ -38,63 +38,22 @@ header.header {
             }
         }
         .buttons {
-            button {
-                position: relative;
-                padding: 20px 38px;
-                margin: 10px;
-                border: none;
-                border-radius: 10px;
-                font-weight: bold;
-                transition: all 1s;
-                cursor: pointer;
+            a.button__arrows {
+                margin-right: 20px;
+                &:first-of-type {
+                    background-color: $white;
+                }
                 &:last-of-type {
-                    background-color: $secondary-dark;
+                    background-color: #08104d;
                     color: $white;
-                }
-                span {
-                    transition: all 1s;
-                }
-                svg {
-                    margin: 0 10px;
-                }
-                &:hover {
                     span {
-                        position: relative;
-                        animation: buttonNameSpan 0.5s forwards;
-                    }
-                    svg {
-                        position: relative;
-                        animation: arrowButtonMoving 0.5s forwards;
+                        &::after,
+                        &::before {
+                            background-image: url('../../../../assests/images/arrow-white.svg');
+                        }
                     }
                 }
             }
         }
-    }
-}
-
-@keyframes arrowButtonMoving {
-    0% {
-        left: 0;
-    }
-    40% {
-        opacity: 0;
-        left: 20px;
-    }
-    75% {
-        opacity: 0.5;
-        left: -100px;
-    }
-    100% {
-        opacity: 1;
-        left: -80px;
-    }
-}
-
-@keyframes buttonNameSpan {
-    0% {
-        left: 0px;
-    }
-    100% {
-        left: 20px;
     }
 }

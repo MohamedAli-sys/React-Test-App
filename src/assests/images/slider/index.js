@@ -14,24 +14,24 @@ import imgh6 from './h1-carousel-img-6.png';
 export const slide =
     [
         {
-            img1: img1,
-            img2: imgh1
+            img: img1,
+            hover: imgh1
         },
         {
-            img1: img2,
-            img2: imgh2
+            img: img2,
+            hover: imgh2
         },
         {
-            img1: img3,
-            img2: imgh3
+            img: img3,
+            hover: imgh3
         }, {
-            img1: img4,
-            img2: imgh4
+            img: img4,
+            hover: imgh4
         }, {
-            img1: img5,
-            img2: imgh5
+            img: img5,
+            hover: imgh5
         }, {
-            img1: img6,
-            img2: imgh6
+            img: img6,
+            hover: imgh6
         },
     ]

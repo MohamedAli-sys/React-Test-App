@@ -56,7 +56,7 @@ const Contact: FunctionComponent<ContactProps> = () => {
                             <input type="email" placeholder="Email" />
                             <input type="text" placeholder="Subject" />
                             <input type="text" placeholder="Write a Message" />
-                            <button><span>Send a Message</span></button>
+                            <a className="button__arrows"><span>Send a Message</span></a>
                         </form>
                     </div>
                 </div>

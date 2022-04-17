@@ -1,29 +1,21 @@
-import { faCartShopping, faBars, faMagnifyingGlass, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { regular, solid, thin } from '@fortawesome/fontawesome-svg-core/import.macro';
+import SvgArrow from "../../Shared/Components/SvgArrow";
 import routes from "../routes";
 import './Navbar.scss'
 
 interface NavbarProps { }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
-    const [scrolled, setScrolled] = useState(false)
     const scrollDown = () => {
-        if (window.scrollY > 600)
-            setScrolled(true)
-        else
-            setScrolled(false)
-
         let el = document.querySelector("#appear-nav")
         if (window.scrollY > 600) {
             el?.classList.add('appear-nav');
         } else {
             el?.classList.remove('appear-nav');
         }
-        console.log(el);
-
     }
     useEffect(() => {
         window.addEventListener('scroll', scrollDown)
@@ -48,12 +40,13 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                         {
                             routes.map((link, idx) => {
                                 return (
-                                    <li key={idx} onClick={() => toggleMenu()}>
+                                    <li key={idx} onClick={() => toggleMenu()} className="link__arrows">
                                         <NavLink
                                             key={idx}
                                             to={link.path}
                                             className={active => active.isActive ? 'isActive' : ''} >
-                                            <FontAwesomeIcon icon={faArrowRightLong} />
+                                            {/* <FontAwesomeIcon icon={faArrowRightLong} /> */}
+                                            <SvgArrow />
                                             <span>{link.name}</span>
                                         </NavLink>
                                     </li>
@@ -79,12 +72,12 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                         {
                             routes.map((link, idx) => {
                                 return (
-                                    <li key={idx} onClick={() => toggleMenu()}>
+                                    <li key={idx} onClick={() => toggleMenu()} className="link__arrows">
                                         <NavLink
                                             key={idx}
                                             to={link.path}
                                             className={active => active.isActive ? 'isActive' : ''} >
-                                            <FontAwesomeIcon icon={faArrowRightLong} />
+                                            <SvgArrow />
                                             <span>{link.name}</span>
                                         </NavLink>
                                     </li>

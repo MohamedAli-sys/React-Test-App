@@ -1,0 +1,19 @@
+@import '../../Styles/variables.scss';
+
+.carousel-container {
+    position: relative;
+    @media (max-width: 480px) {
+        padding: 0 80px 100px;
+    }
+    .item {
+        margin: 10px 0;
+        height: 75px;
+        position: relative;
+        top: -100%;
+        cursor: pointer;
+        transition: all $transition - 0.2;
+        &:hover {
+            top: 0;
+        }
+    }
+}

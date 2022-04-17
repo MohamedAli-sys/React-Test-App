@@ -19,28 +19,25 @@
                 transition: color $transition;
                 display: flex;
                 align-items: center;
-                svg {
-                    display: none;
-                    color: $white;
-                    transition: color $transition;
-                    position: absolute;
-                    left: 0;
-                }
+                // svg {
+                //     color: $white;
+                //     transition: color $transition;
+                //     position: absolute;
+                //     left: 0;
+                // }
                 &.isActive {
                     color: $primary;
                     svg {
                         display: flex;
-                        color: $primary;
+                        fill: $primary;
+                        opacity: 1;
+                        transform: translateX(-10px);
                     }
                 }
             }
             &:hover {
                 a {
                     color: $primary;
-                    svg {
-                        display: flex;
-                        animation: arrowMovingLinks 0.5s forwards;
-                    }
                 }
             }
         }
@@ -278,16 +275,5 @@
                 margin-top: 10px;
             }
         }
-    }
-}
-
-@keyframes arrowMovingLinks {
-    0% {
-        color: $white;
-        left: -20px;
-    }
-    100% {
-        color: $primary;
-        left: 0;
     }
 }

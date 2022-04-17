@@ -1,10 +1,12 @@
 import React from 'react'
-
+import SvgArrow from '../../Shared/Components/SvgArrow';
+import './ContactUs.scss'
 interface ContactUs { }
 
 const ContactUs: React.FunctionComponent<ContactUs> = props => {
     return (
-        <div>Contact Us</div>
+        <div>
+        </div>
     );
 }
 
