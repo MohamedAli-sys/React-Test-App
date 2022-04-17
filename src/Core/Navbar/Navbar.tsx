@@ -1,7 +1,7 @@
 import { faCartShopping, faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { FunctionComponent, useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import SvgArrow from "../../Shared/Components/SvgArrow";
 import routes from "../routes";
 import './Navbar.scss'
@@ -9,6 +9,8 @@ import './Navbar.scss'
 interface NavbarProps { }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
+    const location = useLocation();
+    const [navbar, setNavbar] = useState(false)
     const scrollDown = () => {
         let el = document.querySelector("#appear-nav")
         if (window.scrollY > 600) {
@@ -18,25 +20,31 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
         }
     }
     useEffect(() => {
+        location.pathname === '/' ? setNavbar(true) : setNavbar(false)
         window.addEventListener('scroll', scrollDown)
         return () => {
             window.removeEventListener('scroll', scrollDown)
         }
-    }, [])
+    }, [location])
 
     const toggleMenu = () => {
         const el = document.querySelector('.expanded')
         el?.classList.toggle('toggled')
     }
 
+    const stickToggleMeny = () => {
+        const el = document.querySelector('.stick_expand');
+        el?.classList.toggle('toggled')
+    }
+
     return (
         <>
-            <nav className={`nav`}>
+            <nav className={`nav ${!navbar && 'routers'}`}>
                 <div className="logo">
                     <h1>Logo</h1>
                 </div>
                 <div className="navigation">
-                    <ul className="expanded">
+                    <ul id="expand" className="expanded">
                         {
                             routes.map((link, idx) => {
                                 return (
@@ -45,7 +53,6 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                                             key={idx}
                                             to={link.path}
                                             className={active => active.isActive ? 'isActive' : ''} >
-                                            {/* <FontAwesomeIcon icon={faArrowRightLong} /> */}
                                             <SvgArrow />
                                             <span>{link.name}</span>
                                         </NavLink>
@@ -68,11 +75,11 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                     <h1>Logo</h1>
                 </div>
                 <div className="navigation">
-                    <ul className="expanded">
+                    <ul className="expanded stick_expand">
                         {
                             routes.map((link, idx) => {
                                 return (
-                                    <li key={idx} onClick={() => toggleMenu()} className="link__arrows">
+                                    <li key={idx} onClick={() => stickToggleMeny()} className="link__arrows">
                                         <NavLink
                                             key={idx}
                                             to={link.path}
@@ -91,7 +98,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                     <button> <FontAwesomeIcon icon={faCartShopping} /></button>
                     <button> <FontAwesomeIcon icon={faBars} /></button>
                 </div>
-                <button className="expanded-button" onClick={() => toggleMenu()}> <FontAwesomeIcon icon={faBars} /></button>
+                <button className="expanded-button" onClick={() => stickToggleMeny()}> <FontAwesomeIcon icon={faBars} /></button>
             </nav>
         </>
     );

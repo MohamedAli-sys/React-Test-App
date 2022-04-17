@@ -1,49 +1,6 @@
 @import '../../Styles/globalStyles.scss';
 @import '../../Styles/variables.scss';
 
-nav.nav {
-    background-color: $white;
-    .logo {
-        color: $secondary-dark;
-    }
-    .navigation {
-        ul {
-            li {
-                a {
-                    color: $secondary-dark;
-                    &.isActive {
-                        color: $primary;
-                        svg {
-                            color: $primary;
-                        }
-                    }
-                }
-                &:hover {
-                    a {
-                        color: $primary;
-                        svg {
-                            color: $primary;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .right-side-buttons {
-        button {
-            color: $secondary-dark;
-            border: 2px solid #d7e3f7;
-            &:hover {
-                border-color: $secondary;
-            }
-            &:last-of-type {
-                background-color: $primary;
-                color: $white;
-            }
-        }
-    }
-}
-
 .about-us-container {
     padding: 100px 30px;
     margin: 0 30px;

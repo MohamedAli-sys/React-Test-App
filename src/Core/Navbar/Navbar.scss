@@ -1,4 +1,5 @@
 @import '../../Styles/variables.scss';
+@import '../../Styles/globalStyles.scss';
 nav.nav {
     display: flex;
     justify-content: space-between;
@@ -35,11 +36,14 @@ nav.nav {
                     transition: color $transition;
                     display: flex;
                     align-items: center;
+                    svg {
+                        fill: $white;
+                    }
                     &.isActive {
                         color: $secondary;
                         svg {
                             display: flex;
-                            fill: $primary;
+                            fill: $secondary-dark;
                             opacity: 1;
                             transform: translateX(-10px);
                         }
@@ -48,6 +52,9 @@ nav.nav {
                 &:hover {
                     a {
                         color: $secondary;
+                        svg {
+                            fill: $secondary-dark;
+                        }
                     }
                 }
             }
@@ -129,10 +136,53 @@ nav.nav {
     }
 }
 
+nav.routers {
+    background-color: $white;
+    .logo {
+        color: $secondary-dark;
+    }
+    .navigation {
+        ul {
+            li {
+                a {
+                    color: $secondary-dark;
+                    &.isActive {
+                        color: $primary;
+                        svg {
+                            fill: $primary;
+                        }
+                    }
+                }
+                &:hover {
+                    a {
+                        color: $primary;
+                        svg {
+                            fill: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right-side-buttons {
+        button {
+            color: $secondary-dark;
+            border: 2px solid #d7e3f7;
+            &:hover {
+                border-color: $secondary;
+            }
+            &:last-of-type {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
 nav.sticky__nav {
     position: fixed;
     top: 0;
-    height: 11vh;
+    height: 13vh;
     background-color: $white;
     box-shadow: 0 0 8px 0px #00000052;
     transition: 0.2s ease-in-out;
@@ -143,7 +193,7 @@ nav.sticky__nav {
     .navigation {
         ul {
             @media (max-width: 1024px) {
-                top: 62px;
+                top: 67px;
             }
             li {
                 a {
@@ -152,7 +202,7 @@ nav.sticky__nav {
                         color: $primary;
                         svg {
                             display: flex;
-                            color: $primary;
+                            fill: $primary;
                         }
                     }
                 }
@@ -161,8 +211,7 @@ nav.sticky__nav {
                         color: $primary;
                         svg {
                             display: flex;
-                            animation: arrowMoving 0.5s forwards;
-                            color: $primary;
+                            fill: $primary;
                         }
                     }
                 }
@@ -189,15 +238,4 @@ nav.sticky__nav {
 
 nav.appear-nav {
     transform: translateY(0px);
-}
-
-@keyframes arrowMoving {
-    0% {
-        color: $white;
-        left: -20px;
-    }
-    100% {
-        color: $secondary;
-        left: 0;
-    }
 }

@@ -53,6 +53,9 @@
 .link__arrows {
     display: flex;
     justify-content: center;
+    @media (max-width: 768px) {
+        justify-content: flex-start;
+    }
     a {
         text-decoration: none;
         color: $secondary-dark;
