@@ -10,7 +10,7 @@ interface NavbarProps { }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
     const location = useLocation();
-    const [navbar, setNavbar] = useState(false)
+    const [navbar, setNavbar] = useState(true)
     const scrollDown = () => {
         let el = document.querySelector("#appear-nav")
         if (window.scrollY > 600) {

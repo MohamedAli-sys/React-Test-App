@@ -19,12 +19,6 @@
                 transition: color $transition;
                 display: flex;
                 align-items: center;
-                // svg {
-                //     color: $white;
-                //     transition: color $transition;
-                //     position: absolute;
-                //     left: 0;
-                // }
                 &.isActive {
                     color: $primary;
                     svg {
