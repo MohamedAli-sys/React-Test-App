@@ -1,0 +1,49 @@
+@import '../../Styles/variables.scss';
+
+.our_clients_container {
+    padding: 100px 30px;
+    .our_clients_header {
+        padding: 0 100px;
+        .section_head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .heading {
+                flex: 1;
+                padding: 0 50px;
+                z-index: 1;
+                h2 {
+                    font-size: 60px;
+                    color: $secondary-dark;
+                    line-height: 1;
+                }
+                p {
+                    margin-top: 30px;
+                    font-weight: 500;
+                    color: #666a80;
+                }
+            }
+            .img {
+                flex: 1;
+                z-index: 1;
+                padding: 0 40px 0 0;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .underline_shape {
+            width: 100%;
+            transform: scaleY(-1) translateY(140%);
+            svg {
+                fill: #f2f7ff;
+            }
+        }
+        .underline_style {
+            background-color: #f2f7ff;
+            height: 150px;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+    }
+}
