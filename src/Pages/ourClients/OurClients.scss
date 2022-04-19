@@ -4,18 +4,26 @@
     padding: 100px 30px;
     .our_clients_header {
         padding: 0 100px;
+        @media (max-width: 768px) {
+            padding: 0 20px;
+        }
         .section_head {
             display: flex;
             justify-content: center;
             align-items: center;
+            @media (max-width: 991px) {
+                flex-direction: column;
+            }
             .heading {
                 flex: 1;
                 padding: 0 50px;
                 z-index: 1;
+                margin-bottom: 40px;
                 h2 {
                     font-size: 60px;
                     color: $secondary-dark;
                     line-height: 1;
+                    letter-spacing: -3px;
                 }
                 p {
                     margin-top: 30px;
@@ -27,6 +35,9 @@
                 flex: 1;
                 z-index: 1;
                 padding: 0 40px 0 0;
+                @media (max-width: 768px) {
+                    padding: 0;
+                }
                 img {
                     width: 100%;
                 }
@@ -44,6 +55,17 @@
             height: 150px;
             width: 100%;
             transform: translateY(-50%);
+        }
+    }
+    .amazing_clients {
+        .sectionHeading {
+            width: 60%;
+        }
+        .carousels-contain {
+            margin: 60px 0;
+            .carousel-container .item {
+                height: 80px;
+            }
         }
     }
 }

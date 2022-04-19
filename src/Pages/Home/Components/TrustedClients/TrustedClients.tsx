@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import Heading from "../../../../Shared/Heading/Heading";
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './TrustedClients.scss';
 import { slide } from "../../../../assests/images/slider";
