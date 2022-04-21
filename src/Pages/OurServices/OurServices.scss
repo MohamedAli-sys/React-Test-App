@@ -1,0 +1,79 @@
+@import '../../Styles/variables.scss';
+
+.our_services_container {
+    padding: 100px 30px;
+    .our_services_header {
+        padding: 0 100px;
+        @media (max-width: 768px) {
+            padding: 0 20px;
+        }
+        .section_head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: 991px) {
+                flex-direction: column;
+            }
+            .heading {
+                flex: 1;
+                padding: 0 50px;
+                z-index: 1;
+                margin-bottom: 40px;
+                h2 {
+                    font-size: 60px;
+                    color: $secondary-dark;
+                    line-height: 1;
+                    letter-spacing: -3px;
+                }
+                p {
+                    margin-top: 30px;
+                    font-weight: 500;
+                    color: #666a80;
+                }
+            }
+            .img {
+                flex: 1;
+                z-index: 1;
+                padding: 0 40px 0 0;
+                @media (max-width: 768px) {
+                    padding: 0;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .underline_shape {
+            width: 100%;
+            transform: scaleY(-1) translateY(140%);
+            svg {
+                fill: #f2f7ff;
+            }
+        }
+        .underline_style {
+            background-color: #f2f7ff;
+            height: 150px;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+    }
+    .statistics {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        justify-content: center;
+        .statis {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            @media (max-width: 768px) {
+            }
+            text-align: center;
+            color: $secondary-dark;
+            font-size: 27px;
+            padding: 30px 50px;
+            h5 {
+                margin: 0 30px;
+            }
+        }
+    }
+}

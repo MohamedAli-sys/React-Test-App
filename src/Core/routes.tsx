@@ -5,7 +5,7 @@ const Home = React.lazy(() => import('../Pages/Home/Home'))
 const AboutUs = React.lazy(() => import('../Pages/AboutUs/AboutUs'))
 const ContactUs = React.lazy(() => import('../Pages/ContactUs/ContactUs'))
 const OurClients = React.lazy(() => import('../Pages/ourClients/OurClients'))
-const Services = React.lazy(() => import('../Pages/ourServcies/ourServices'))
+const Services = React.lazy(() => import('../Pages/OurServices/OurServices'))
 
 const routes: IRoute[] = [
     {
