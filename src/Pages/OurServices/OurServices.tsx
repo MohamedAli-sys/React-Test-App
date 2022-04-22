@@ -1,4 +1,6 @@
-import { FunctionComponent } from "react";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
 import { OurServicesImages } from "../../assests/images/ourServices";
 import CanvasCircle from "../../Shared/Components/CanvasCircle/CanvasCircle";
 import './OurServices.scss'
@@ -27,7 +29,7 @@ const OurServices: FunctionComponent<OurServicesProps> = () => {
                     </div>
                     <div className="underline_style"></div>
                 </section>
-                <div className="statistics">
+                <section className="statistics">
                     <div className="statis">
                         <CanvasCircle color='#ff4b36' percentage={85} />
                         <h5>All social media strategy</h5>
@@ -40,7 +42,57 @@ const OurServices: FunctionComponent<OurServicesProps> = () => {
                         <CanvasCircle color="#ff4b36" percentage={69} />
                         <h5>All social media strategy</h5>
                     </div>
-                </div>
+                </section>
+                <section className="fresh_ideas_container">
+                    <div className="fresh_ideas">
+                        <div className="left-side">
+                            <h5>
+                                Fresh, new ideas
+                            </h5>
+                            <div className="idea">
+                                <FontAwesomeIcon icon={faCheck} />
+                                <p>
+                                    Vel illum dolore eu feugiat nulla facilisis at vero eros et accu qui blandit praesent luptatum zzril delenit augue duis.
+                                </p>
+                            </div>
+                            <div className="idea">
+                                <FontAwesomeIcon icon={faCheck} />
+                                <p>
+                                    Autem vel eum iriure dolor in hendrerit in vulputate velit esse dolore eu feugiat nulla facilisis at vero eros et accumsan.
+                                </p>
+                            </div>
+                            <a className="button__arrows">
+                                <span>Read More</span>
+                            </a>
+                        </div>
+                        <div className="right-side">
+                            <div className="column">
+                                <div className="percentage market">
+                                    <div className="backdrop"></div>
+                                    <div className="frontdrop"></div>
+                                </div>
+                                <p>Marketing</p>
+                                <p className="Perc">68%</p>
+                            </div>
+                            <div className="column">
+                                <div className="percentage develop">
+                                    <div className="backdrop"></div>
+                                    <div className="frontdrop"></div>
+                                </div>
+                                <p>Development</p>
+                                <p className="Perc">56%</p>
+                            </div>
+                            <div className="column">
+                                <div className="percentage design">
+                                    <div className="backdrop"></div>
+                                    <div className="frontdrop"></div>
+                                </div>
+                                <p>Design</p>
+                                <p className="Perc">82%</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </>
     );

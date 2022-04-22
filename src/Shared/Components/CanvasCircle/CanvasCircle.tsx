@@ -23,7 +23,6 @@ const CanvasCircle: FunctionComponent<CanvasCircleProps> = (props) => {
             oneProcent = 360 / 100,
             result = oneProcent * props.percentage;
         c!.lineCap = 'round';
-
         let arcMove = () => {
             let deegres = 0;
             let acrInterval = setInterval(() => {
@@ -40,21 +39,16 @@ const CanvasCircle: FunctionComponent<CanvasCircleProps> = (props) => {
                 c!.stroke();
 
                 c!.beginPath();
-                c!.strokeStyle = props.color; // Color
+                c!.strokeStyle = props.color;
                 c!.lineWidth = 10;
                 c!.arc(posX! / 2, posY! / 2, 100, (Math.PI / 180) * 270, (Math.PI / 180) * (270 + deegres));
                 c!.stroke();
+
                 if (deegres >= result) clearInterval(acrInterval);
             }, fps);
 
         }
         arcMove();
-
-        // window.onscroll = () => {
-        //     if (window.scrollY >= ctx!.offsetTop) {
-        //         arcMove();
-        //     }
-        // }
     }, [])
 
     return (
