@@ -1,0 +1,105 @@
+@import '../../../../Styles/variables.scss';
+@import '../../../../Styles/globalStyles.scss';
+.fresh_ideas_container {
+    padding: 0 40px;
+    .fresh_ideas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f7ff;
+        padding: 30px 40px;
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
+        .left-side {
+            h5 {
+                color: $secondary-dark;
+                font-size: 50px;
+                margin: 20px 0;
+            }
+            .idea {
+                display: flex;
+                margin-bottom: 20px;
+                font-size: 15px;
+                color: #666a80;
+                font-weight: 500;
+                svg {
+                    padding: 0 20px 0 0;
+                }
+            }
+            a.button__arrows {
+                background-color: $primary;
+                color: $white;
+                span {
+                    &::after,
+                    &::before {
+                        background-image: url('../../../../assests/images/arrow-white.svg');
+                    }
+                }
+            }
+        }
+        .right-side {
+            padding: 100px 0;
+            display: flex;
+            @media (max-width: 768px) {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            .column {
+                margin: 0 15px;
+                @media (max-width: 768px) {
+                    margin-bottom: 20px;
+                }
+                .percentage {
+                    position: relative;
+                    .backdrop {
+                        background-color: #fff;
+                        height: 240px;
+                        width: 160px;
+                        border-radius: 5px;
+                    }
+                    .frontdrop {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 160px;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                    &.market {
+                        .frontdrop {
+                            background-color: $secondary-dark;
+                        }
+                    }
+                    &.develop {
+                        .frontdrop {
+                            background-color: #4772ff;
+                        }
+                    }
+                    &.design {
+                        .frontdrop {
+                            background-color: $primary;
+                        }
+                    }
+                }
+                p {
+                    &:first-of-type {
+                        margin-top: 17px;
+                        font-size: 13px;
+                        color: #656073;
+                        font-weight: 500;
+                    }
+                    &:last-of-type {
+                        color: $secondary-dark;
+                        margin-bottom: 10px;
+                        font-size: 20px;
+                        font-weight: 700;
+                        &::after {
+                            content: '%';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
