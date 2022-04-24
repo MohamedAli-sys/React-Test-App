@@ -100,6 +100,8 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                 </div>
                 <button className="expanded-button" onClick={() => stickToggleMeny()}> <FontAwesomeIcon icon={faBars} /></button>
             </nav>
+            {/* <a href="" className="back-to-top">
+            </a> */}
         </>
     );
 }

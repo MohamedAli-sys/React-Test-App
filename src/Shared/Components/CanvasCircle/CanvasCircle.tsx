@@ -15,7 +15,7 @@ const CanvasCircle: FunctionComponent<CanvasCircleProps> = (props) => {
         canvasCtxRef.current = ctxRef.current!.getContext('2d')
         let spanProcent = spanRef.current
         let c = canvasCtxRef.current
-
+        let started = false
         let posX = ctx?.width,
             posY = ctx?.height,
             fps = 1000 / 200,
@@ -46,9 +46,17 @@ const CanvasCircle: FunctionComponent<CanvasCircleProps> = (props) => {
 
                 if (deegres >= result) clearInterval(acrInterval);
             }, fps);
-
         }
-        arcMove();
+        const animationActionFire = () => {
+            if (window.scrollY >= sectionRef.current!.offsetTop - 250 && !started) {
+                arcMove();
+                started = true
+            }
+        }
+        window.addEventListener('scroll', animationActionFire)
+        return () => {
+            window.removeEventListener('scroll', animationActionFire)
+        }
     }, [])
 
     return (
