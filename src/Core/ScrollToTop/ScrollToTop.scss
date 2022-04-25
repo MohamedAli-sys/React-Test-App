@@ -1,0 +1,31 @@
+@import '../../Styles/variables.scss';
+.back-to-top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: $primary;
+    background-image: url('../../assests/images/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    background-position: center;
+    transform: rotate(270deg);
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+.toTopAppear {
+    display: block;
+    animation: toTopAppearAnim 0.7s forwards;
+}
+
+@keyframes toTopAppearAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
