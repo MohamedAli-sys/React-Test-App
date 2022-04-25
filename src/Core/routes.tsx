@@ -6,11 +6,12 @@ const AboutUs = React.lazy(() => import('../Pages/AboutUs/AboutUs'))
 const ContactUs = React.lazy(() => import('../Pages/ContactUs/ContactUs'))
 const OurClients = React.lazy(() => import('../Pages/ourClients/OurClients'))
 const Services = React.lazy(() => import('../Pages/OurServices/OurServices'))
+const Team = React.lazy(() => import('../Pages/OurTeam/OurTeam'))
 
 const routes: IRoute[] = [
     {
         path: '/',
-        name: 'Home Page',
+        name: 'Home',
         component: Home,
     },
     {
@@ -25,14 +26,19 @@ const routes: IRoute[] = [
     },
     {
         path: '/clients',
-        name: 'Our Clients',
+        name: 'Clients',
         component: OurClients,
     },
     {
         path: '/services',
-        name: 'Our Services',
+        name: 'Services',
         component: Services,
     },
+    {
+        path: '/OurTeam',
+        name: 'Team',
+        component: Team
+    }
 ]
 
 export default routes;

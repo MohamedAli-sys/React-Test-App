@@ -1,0 +1,11 @@
+@import '../../Styles/variables.scss';
+.team-container {
+    padding: 100px 40px 50px;
+    .team-members {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
