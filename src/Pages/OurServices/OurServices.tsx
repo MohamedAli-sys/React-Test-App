@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import { OurServicesImages } from "../../assests/images/ourServices";
 import CanvasCircle from "./Components/CanvasCircle/CanvasCircle";
 import FreshIdeas from "./Components/FreshIdeas/FreshIdeas";
+import Plans from "./Components/Plans/Plans";
 import Solutions from "./Components/Solutions/Solutions";
 import './OurServices.scss'
 interface OurServicesProps {
@@ -45,6 +46,7 @@ const OurServices: FunctionComponent<OurServicesProps> = () => {
                 </section>
                 <FreshIdeas />
                 <Solutions />
+                <Plans />
             </div>
         </>
     );

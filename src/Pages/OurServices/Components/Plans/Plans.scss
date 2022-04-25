@@ -1,0 +1,91 @@
+@import '../../../../Styles/variables.scss';
+@import '../../../../Styles/globalStyles.scss';
+
+.plans_container {
+    padding: 0 40px;
+    .skew-back-line {
+        transform: scaleY(-1) translateY(-1px);
+        @media (max-width: 480px) {
+            transform: scaleY(-1) translateY(-4px);
+        }
+        svg {
+            fill: #f2f7ff;
+        }
+    }
+    .plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f7ff;
+        padding: 80px 40px;
+        .plan {
+            display: flex;
+            @media (max-width: 991px) {
+                margin-top: 60px;
+            }
+            @media (max-width: 480px) {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .price {
+                .price-amount {
+                    font-size: 50px;
+                    font-weight: 600;
+                }
+                .monthly {
+                    margin-top: 5px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #666a80;
+                }
+            }
+            .details {
+                padding: 0 20px;
+                .title {
+                    font-size: 27px;
+                    padding-top: 5px;
+                    font-weight: 700;
+                }
+                .describe {
+                    font-size: 18px;
+                    color: #666a80;
+                    padding: 14px 25px 0 0;
+                    font-weight: 600;
+                    @media (max-width: 480px) {
+                        padding: 14px 0 0 0;
+                    }
+                }
+                .list {
+                    ul {
+                        list-style: none;
+                        padding: 18px 0 50px;
+                        li {
+                            color: #666a80;
+                            font-size: 15px;
+                            padding: 15px 0;
+                            font-weight: 600;
+                            svg {
+                                padding-right: 20px;
+                            }
+                        }
+                    }
+                }
+                a.button__arrows {
+                    background-color: $secondary;
+                    color: $white;
+                    &.primary {
+                        background-color: $primary;
+                    }
+                    span {
+                        &::after,
+                        &::before {
+                            background-image: url('../../../../assests/images/arrow-white.svg');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
