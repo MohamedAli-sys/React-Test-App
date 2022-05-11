@@ -61,7 +61,7 @@ const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
     ]
     return (
         <>
-            <section className="team-container">
+            <section className="prof-team-container">
                 <Heading sectionName={"Meet the professionals"} headingParag={"Praesent hendrerit, mi facilisis eleifend lobortis mi est hendrerit fringillaibus lorem, nonfringilla dui enim et ante eleiz."} />
                 <div className="team-container-content">
                     {
