@@ -11,20 +11,25 @@ interface OurTeamProps {
 const OurTeam: FunctionComponent<OurTeamProps> = () => {
     const [users, setUsers] = useState<IUsers[]>([]);
     useEffect(() => {
+        getApiUsers()
+    }, [])
+
+    const getApiUsers = () => {
         axiosInst.get('/users').then((res) => {
             setUsers(res.data)
         })
-    }, [])
-
+    }
     return (
         <>
             <div className="team-container">
                 <Link className="button__arrows add" to={`/ourTeam/Add`} ><span>Add User</span></Link>
                 <div className="team-members">
                     {
-                        users.map((user: IUsers) => {
+                        users.map((user: IUsers, idx) => {
+                            console.log(idx);
+
                             return (
-                                <UserCard user={user} key={user.id} />
+                                <UserCard user={user} key={user.id} getApiUsers={getApiUsers} />
                             )
                         })
                     }

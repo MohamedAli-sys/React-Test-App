@@ -1,8 +1,8 @@
 export default interface IUsers {
     id?: number;
     name: string;
-    username: string;
+    title: string;
     email: string;
-    imgA?: string;
-    imgB?: string;
+    image: string;
+    background: string;
 }

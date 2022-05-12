@@ -1,15 +1,22 @@
 import { faDribbble, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel';
 import { AboutUsImages } from '../../assests/images/aboutUs';
 import { AboutUsSlider } from '../../assests/images/aboutUs/Slide';
+import IUsers from '../../interfaces/users';
+import { axiosInst } from '../../Network';
 import Carousels from '../../Shared/Carousels/Carousels';
 import Heading from '../../Shared/Heading/Heading';
 import Blog from '../Home/Components/Blog/Blog';
 import './AboutUs.scss';
 interface AboutUs { }
 const AboutUs: React.FunctionComponent<AboutUs> = props => {
+    const [users, setUsers] = useState<IUsers[]>([])
+    useEffect(() => {
+        axiosInst.get('users').then((res) => setUsers(res.data))
+    }, [])
+
     const cards = [
         {
             title: 'CEO',
@@ -115,7 +122,7 @@ const AboutUs: React.FunctionComponent<AboutUs> = props => {
                     <Heading sectionName='Meet the professionals' headingParag='Praesent hendrerit, mi facilisis eleifend lobortis mi est hendrerit fringillaibus lorem, nonfringilla dui enim et ante eleiz.' />
                     <div className="team-members">
                         {
-                            cards.map((el, idx) => {
+                            users.slice(0, 8).map((el, idx) => {
                                 return (
                                     <div className="card" key={idx}>
                                         <div className="card-img">

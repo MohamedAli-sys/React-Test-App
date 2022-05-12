@@ -13,12 +13,14 @@ const OurTeamControls: FunctionComponent<OurTeamControlsProps> = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [title, setTitle] = useState('');
+    const [image, setImage] = useState('');
     useEffect(() => {
         if (params.id) {
             axiosInst.get(`/users/${params.id}`).then((res) => {
                 setName(res.data.name);
                 setEmail(res.data.email);
                 setTitle(res.data.title);
+                setImage(res.data.image)
             });
         }
     }, [params.id]);
@@ -27,7 +29,8 @@ const OurTeamControls: FunctionComponent<OurTeamControlsProps> = () => {
         let body = {
             name: name,
             email: email,
-            title: title
+            title: title,
+            image: image
         };
         if (params.id) {
             axiosInst.patch(`/users/${params.id}`, body).then((res) => {
@@ -60,6 +63,7 @@ const OurTeamControls: FunctionComponent<OurTeamControlsProps> = () => {
         setName('');
         setEmail('');
         setTitle('');
+        setImage('')
     };
 
     return (
@@ -70,6 +74,7 @@ const OurTeamControls: FunctionComponent<OurTeamControlsProps> = () => {
                     <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Type Your Name" />
                     <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Type Your Email" />
                     <input type="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Type Your Title" />
+                    <input type="text" name="image" value={image} onChange={(e) => setImage(e.target.value)} placeholder="Type Your Image Link" />
                     <button className='button__arrows' onClick={submitForm}><span>{params.id ? 'Edit' : 'Add'}</span></button>
                 </div>
             </div>

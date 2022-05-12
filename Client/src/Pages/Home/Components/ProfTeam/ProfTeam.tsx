@@ -2,14 +2,14 @@ import { faDribbble, faFacebookF, faTwitter, faYoutube } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FunctionComponent, useEffect, useState } from 'react';
 import { imagesTeam } from '../../../../assests/images/team';
-// import IUsers from '../../../../interfaces/users';
-// import { axiosInst } from '../../../../Network';
+import IUsers from '../../../../interfaces/users';
+import { axiosInst } from '../../../../Network';
 import Heading from '../../../../Shared/Heading/Heading';
 import './ProfTeam.scss';
-interface ProfTeamProps {}
+interface ProfTeamProps { }
 
 const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
-    // const [users, setUsers] = useState<IUsers[]>([]);
+    const [users, setUsers] = useState<IUsers[]>([]);
     const cards = [
         {
             title: 'Designer',
@@ -61,11 +61,11 @@ const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
         }
     ];
 
-    // useEffect(() => {
-    //     axiosInst.get('/users').then((res) => {
-    //         setUsers(res.data);
-    //     });
-    // }, []);
+    useEffect(() => {
+        axiosInst.get('/users').then((res) => {
+            setUsers(res.data);
+        });
+    }, []);
 
     return (
         <>
@@ -75,12 +75,12 @@ const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
                     headingParag={'Praesent hendrerit, mi facilisis eleifend lobortis mi est hendrerit fringillaibus lorem, nonfringilla dui enim et ante eleiz.'}
                 />
                 <div className="team-container-content">
-                    {cards.map((el, idx) => {
+                    {users.slice(0, 8).map((el, idx) => {
                         return (
                             <div className="card" key={idx}>
                                 <div className="card-img">
-                                    <img src={el.imgA} alt="" />
-                                    <img src={el.imgB} alt="" />
+                                    <img src={el.image} alt="" />
+                                    <img src={el.background} alt="" />
                                 </div>
                                 <div className="card-body">
                                     <h6>{el.title}</h6>
@@ -88,7 +88,7 @@ const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
                                     <div className="team-icons">
                                         <ul>
                                             <li>
-                                                <FontAwesomeIcon icon={faTwitter} />{' '}
+                                                <FontAwesomeIcon icon={faTwitter} />
                                             </li>
                                             <li>
                                                 <FontAwesomeIcon icon={faDribbble} />
