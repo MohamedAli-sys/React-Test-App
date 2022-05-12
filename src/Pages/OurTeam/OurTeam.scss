@@ -1,6 +1,16 @@
 @import '../../Styles/variables.scss';
 .team-container {
     padding: 100px 40px 50px;
+    a.button__arrows.add {
+        background-color: $primary;
+        color: $white;
+        span {
+            &::after,
+            &::before {
+                background-image: url('../../assests/images/arrow-white.svg');
+            }
+        }
+    }
     .team-members {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

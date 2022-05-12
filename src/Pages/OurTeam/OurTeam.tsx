@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import IUsers from "../../interfaces/users";
 import { axiosInst } from "../../Network";
 import UserCard from "../../Shared/UserCard/UserCard";
@@ -18,6 +19,7 @@ const OurTeam: FunctionComponent<OurTeamProps> = () => {
     return (
         <>
             <div className="team-container">
+                <Link className="button__arrows add" to={`/ourTeam/Add`} ><span>Add User</span></Link>
                 <div className="team-members">
                     {
                         users.map((user: IUsers) => {

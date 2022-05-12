@@ -5,6 +5,7 @@ import routes from './Core/routes';
 import Navbar from './Core/Navbar/Navbar';
 import Footer from './Core/Footer/Footer';
 import ScrollToTop from './Core/ScrollToTop/ScrollToTop';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           </Routes>
         </Suspense>
         <ScrollToTop />
+        <ToastContainer />
         <Footer />
       </Router>
     </div>

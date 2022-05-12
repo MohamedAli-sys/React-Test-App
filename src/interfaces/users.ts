@@ -3,4 +3,6 @@ export default interface IUsers {
     name: string;
     username: string;
     email: string;
+    imgA?: string;
+    imgB?: string;
 }

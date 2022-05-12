@@ -1,6 +1,7 @@
 export default interface IRoute {
-  path: string;
-  name: string;
-  component: any;
-  props?: any;
+    path: string;
+    name: string;
+    component: any;
+    props?: any;
+    control?: boolean;
 }

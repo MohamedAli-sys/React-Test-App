@@ -45,7 +45,7 @@
         }
         .underline_shape {
             width: 100%;
-            transform: scaleY(-1) translateY(140%);
+            transform: scaleY(-1) translateY(104px);
             svg {
                 fill: #f2f7ff;
             }
@@ -54,12 +54,12 @@
             background-color: #f2f7ff;
             height: 150px;
             width: 100%;
-            transform: translateY(-50%);
+            transform: translateY(-104px);
         }
     }
     .statistics {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
         justify-content: center;
         .statis {
             display: flex;

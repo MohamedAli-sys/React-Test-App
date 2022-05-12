@@ -1,0 +1,47 @@
+@import '../../Styles/variables.scss';
+.ourTeamControl-container {
+    padding: 100px 40px 50px;
+    .form {
+        padding: 0 20px;
+        margin: 0 20px;
+        @media (max-width: 991px) {
+            display: block;
+            width: 100%;
+            padding: 0 35px;
+            margin: 20px 0;
+        }
+        input {
+            position: relative;
+            width: 100%;
+            margin: 0 0 30px;
+            padding: 13px 0 0;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: inherit;
+            line-height: calc(58px - (13px * 2) - 2px);
+            color: #08104d;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #666a80;
+            border-radius: 0;
+            outline: 0;
+            -webkit-appearance: none;
+            -webkit-transition: border-color 0.2s ease-in-out;
+            -moz-transition: border-color 0.2s ease-in-out;
+            transition: border-color 0.2s ease-in-out;
+            color: #666a80;
+        }
+        .button__arrows {
+            background-color: $secondary-dark;
+            border: none;
+            outline: none;
+            span {
+                color: $white;
+                &::before,
+                &::after {
+                    background-image: url('../../assests/images/arrow-white.svg');
+                }
+            }
+        }
+    }
+}

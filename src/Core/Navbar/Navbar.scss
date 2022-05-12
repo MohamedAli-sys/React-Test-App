@@ -4,7 +4,7 @@ nav.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15vh;
+    height: 75px;
     background-color: rgba(255, 255, 255, 0);
     padding: 0 40px;
     z-index: 9999;
@@ -182,11 +182,11 @@ nav.routers {
 nav.sticky__nav {
     position: fixed;
     top: 0;
-    height: 13vh;
+    height: 85px;
     background-color: $white;
     box-shadow: 0 0 8px 0px #00000052;
     transition: 0.2s ease-in-out;
-    transform: translateY(-100px);
+    transform: translateY(-100%);
     .logo {
         color: $secondary-dark;
     }

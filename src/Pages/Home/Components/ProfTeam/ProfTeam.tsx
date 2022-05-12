@@ -1,14 +1,15 @@
-import { fab, faDribbble, faFacebook, faFacebookF, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent } from "react";
-import { imagesTeam } from "../../../../assests/images/team";
-import Heading from "../../../../Shared/Heading/Heading";
+import { faDribbble, faFacebookF, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FunctionComponent, useEffect, useState } from 'react';
+import { imagesTeam } from '../../../../assests/images/team';
+// import IUsers from '../../../../interfaces/users';
+// import { axiosInst } from '../../../../Network';
+import Heading from '../../../../Shared/Heading/Heading';
 import './ProfTeam.scss';
-interface ProfTeamProps {
-
-}
+interface ProfTeamProps {}
 
 const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
+    // const [users, setUsers] = useState<IUsers[]>([]);
     const cards = [
         {
             title: 'Designer',
@@ -57,41 +58,57 @@ const ProfTeam: FunctionComponent<ProfTeamProps> = () => {
             name: 'William Smith',
             imgA: imagesTeam[7].imgA,
             imgB: imagesTeam[7].imgB
-        },
-    ]
+        }
+    ];
+
+    // useEffect(() => {
+    //     axiosInst.get('/users').then((res) => {
+    //         setUsers(res.data);
+    //     });
+    // }, []);
+
     return (
         <>
             <section className="prof-team-container">
-                <Heading sectionName={"Meet the professionals"} headingParag={"Praesent hendrerit, mi facilisis eleifend lobortis mi est hendrerit fringillaibus lorem, nonfringilla dui enim et ante eleiz."} />
+                <Heading
+                    sectionName={'Meet the professionals'}
+                    headingParag={'Praesent hendrerit, mi facilisis eleifend lobortis mi est hendrerit fringillaibus lorem, nonfringilla dui enim et ante eleiz.'}
+                />
                 <div className="team-container-content">
-                    {
-                        cards.map((el, idx) => {
-                            return (
-                                <div className="card" key={idx}>
-                                    <div className="card-img">
-                                        <img src={el.imgA} alt="" />
-                                        <img src={el.imgB} alt="" />
-                                    </div>
-                                    <div className="card-body">
-                                        <h6>{el.title}</h6>
-                                        <h6>{el.name}</h6>
-                                        <div className="team-icons">
-                                            <ul>
-                                                <li><FontAwesomeIcon icon={faTwitter} /> </li>
-                                                <li><FontAwesomeIcon icon={faDribbble} /></li>
-                                                <li><FontAwesomeIcon icon={faFacebookF} /></li>
-                                                <li><FontAwesomeIcon icon={faYoutube} /></li>
-                                            </ul>
-                                        </div>
+                    {cards.map((el, idx) => {
+                        return (
+                            <div className="card" key={idx}>
+                                <div className="card-img">
+                                    <img src={el.imgA} alt="" />
+                                    <img src={el.imgB} alt="" />
+                                </div>
+                                <div className="card-body">
+                                    <h6>{el.title}</h6>
+                                    <h6>{el.name}</h6>
+                                    <div className="team-icons">
+                                        <ul>
+                                            <li>
+                                                <FontAwesomeIcon icon={faTwitter} />{' '}
+                                            </li>
+                                            <li>
+                                                <FontAwesomeIcon icon={faDribbble} />
+                                            </li>
+                                            <li>
+                                                <FontAwesomeIcon icon={faFacebookF} />
+                                            </li>
+                                            <li>
+                                                <FontAwesomeIcon icon={faYoutube} />
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                            )
-                        })
-                    }
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
         </>
     );
-}
+};
 
 export default ProfTeam;
