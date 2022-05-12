@@ -26,8 +26,6 @@ const OurTeam: FunctionComponent<OurTeamProps> = () => {
                 <div className="team-members">
                     {
                         users.map((user: IUsers, idx) => {
-                            console.log(idx);
-
                             return (
                                 <UserCard user={user} key={user.id} getApiUsers={getApiUsers} />
                             )
