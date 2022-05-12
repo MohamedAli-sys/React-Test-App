@@ -5,10 +5,14 @@ import IUsers from "../../interfaces/users";
 import { axiosInst } from "../../Network";
 import './UserCard.scss'
 interface UserCardProps {
-    user: IUsers
+    user: IUsers,
+    // 
+    getApiUsers: Function
+    // 
 }
 
-const UserCard: FunctionComponent<UserCardProps> = ({ user }) => {
+// const UserCard: FunctionComponent<UserCardProps> = ({ user }) => {
+const UserCard: FunctionComponent<UserCardProps> = ({ user, getApiUsers }) => {
     const deleteUser = (id: number) => {
         axiosInst.delete(`users/${id}`).then((res) => {
             toast.success('User Deleted', {
@@ -19,7 +23,12 @@ const UserCard: FunctionComponent<UserCardProps> = ({ user }) => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined
-            })
+            });
+
+            // 
+            getApiUsers()
+            // 
+
         })
     }
     return (

@@ -11,10 +11,18 @@ interface OurTeamProps {
 const OurTeam: FunctionComponent<OurTeamProps> = () => {
     const [users, setUsers] = useState<IUsers[]>([]);
     useEffect(() => {
+        // 
+        getApiUsers()
+        // 
+    }, [])
+
+    // 
+    const getApiUsers = ()=>{
         axiosInst.get('/users').then((res) => {
             setUsers(res.data)
         })
-    }, [])
+    }
+    // 
 
     return (
         <>
@@ -24,7 +32,8 @@ const OurTeam: FunctionComponent<OurTeamProps> = () => {
                     {
                         users.map((user: IUsers) => {
                             return (
-                                <UserCard user={user} key={user.id} />
+                                // <UserCard user={user} key={user.id}/>
+                                <UserCard user={user} key={user.id} getApiUsers={getApiUsers}/>
                             )
                         })
                     }
