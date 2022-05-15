@@ -7,6 +7,7 @@ const ScrollTop: FunctionComponent<ScrollTopProps> = (props) => {
     const location = useLocation();
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Test
     }, [location]);
 
     return <>{props.children}</>;
